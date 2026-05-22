@@ -1,0 +1,177 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.97 0.03 220) 0%, oklch(0.98 0.02 190) 50%, oklch(0.99 0.01 200) 100%);
+  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, var(--primary) 35%, transparent);
+  --shadow-soft: 0 8px 30px -12px oklch(0.5 0.05 220 / 0.18);
+  --shadow-card: 0 4px 20px -4px oklch(0.5 0.05 220 / 0.12);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2") format("woff2");
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.99 0.005 220);
+  --foreground: oklch(0.18 0.04 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 240);
+  --primary: oklch(0.685 0.155 235);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.72 0.13 185);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.96 0.01 220);
+  --muted-foreground: oklch(0.5 0.04 240);
+  --accent: oklch(0.95 0.04 200);
+  --accent-foreground: oklch(0.25 0.05 235);
+  --destructive: oklch(0.62 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.015 220);
+  --input: oklch(0.94 0.01 220);
+  --ring: oklch(0.685 0.155 235);
+  --sidebar: oklch(0.985 0.005 220);
+  --sidebar-foreground: oklch(0.18 0.04 240);
+  --sidebar-primary: oklch(0.685 0.155 235);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.02 220);
+  --sidebar-accent-foreground: oklch(0.18 0.04 240);
+  --sidebar-border: oklch(0.92 0.015 220);
+  --sidebar-ring: oklch(0.685 0.155 235);
+}
+
+.dark {
+  --background: oklch(0.16 0.025 240);
+  --foreground: oklch(0.97 0.01 220);
+  --card: oklch(0.22 0.03 240);
+  --card-foreground: oklch(0.97 0.01 220);
+  --popover: oklch(0.22 0.03 240);
+  --popover-foreground: oklch(0.97 0.01 220);
+  --primary: oklch(0.72 0.16 235);
+  --primary-foreground: oklch(0.15 0.03 240);
+  --secondary: oklch(0.74 0.13 185);
+  --secondary-foreground: oklch(0.15 0.03 240);
+  --muted: oklch(0.27 0.03 240);
+  --muted-foreground: oklch(0.7 0.02 220);
+  --accent: oklch(0.3 0.05 220);
+  --accent-foreground: oklch(0.97 0.01 220);
+  --destructive: oklch(0.65 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.72 0.16 235);
+  --sidebar: oklch(0.2 0.03 240);
+  --sidebar-foreground: oklch(0.97 0.01 220);
+  --sidebar-primary: oklch(0.72 0.16 235);
+  --sidebar-primary-foreground: oklch(0.15 0.03 240);
+  --sidebar-accent: oklch(0.27 0.03 240);
+  --sidebar-accent-foreground: oklch(0.97 0.01 220);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.72 0.16 235);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(at 10% 0%, color-mix(in oklab, var(--primary) 12%, transparent) 0px, transparent 50%),
+      radial-gradient(at 90% 20%, color-mix(in oklab, var(--secondary) 12%, transparent) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@utility glass {
+  background-color: color-mix(in oklab, var(--background) 60%, transparent);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+@utility gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility gradient-bg {
+  background: var(--gradient-primary);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@layer utilities {
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-30px) translateX(20px); }
+  }
+  .animate-float { animation: float-slow 8s ease-in-out infinite; }
+}
