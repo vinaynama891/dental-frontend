@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { bookAppointment } from "@/lib/appointments";
 import { getUser } from "@/lib/auth";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 
 const TIME_SLOTS = ["09:00", "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"];
 const TREATMENTS = [
